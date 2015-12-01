@@ -184,6 +184,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="GroupNames.cs" />
+    <Compile Include="Handlers\ProductAddedHandler.cs" />
     <Compile Include="Handlers\ProjectBudgetHandler.cs" />
     <Compile Include="Hubs\PricingHub.cs" />
     <Compile Include="Hubs\ProjectHub.cs" />
@@ -197,9 +198,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\floorplan.png" />
+    <Content Include="Images\icons\keypad.png" />
+    <Content Include="Images\icons\lights.png" />
+    <Content Include="Images\icons\phone.png" />
+    <Content Include="Images\icons\projector.png" />
+    <Content Include="Images\icons\seats.png" />
+    <Content Include="Images\icons\speaker.png" />
+    <Content Include="Images\icons\station.png" />
+    <Content Include="Images\icons\tv.png" />
+    <Content Include="Images\icons\wap.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\budget.js" />
+    <Content Include="Scripts\floorplan.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -227,6 +239,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Budget.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

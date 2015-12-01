@@ -10,8 +10,14 @@ namespace Slate.Web.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Floorplan Designer";
 
+            return View();
+        }
+
+        public ActionResult Budget()
+        {
+            ViewBag.Title = "Budget";
             return View();
         }
 

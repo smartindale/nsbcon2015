@@ -29,15 +29,9 @@ namespace Slate.Web.Controllers.Api
             return Ok();
         }
 
-        public IHttpActionResult Post()
+        public IHttpActionResult Post([FromBody]AddProductToProject message)
         {
-            NServiceBusConfig.Bus.Send<AddProductToProject>(m =>
-            {
-                m.ProductId = 1;
-                m.ProjectId = 1;
-                m.X = 123;
-                m.Y = 155;
-            });
+            NServiceBusConfig.Bus.Send(message);
             return Ok();
         }
 

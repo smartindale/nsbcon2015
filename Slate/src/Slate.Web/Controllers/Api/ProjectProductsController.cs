@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Slate.Projects.Contracts.Commands;
+using Slate.Web.App_Start;
 
 namespace Slate.Web.Controllers.Api
 {
@@ -26,6 +28,13 @@ namespace Slate.Web.Controllers.Api
 
         public IHttpActionResult Post()
         {
+            NServiceBusConfig.Bus.Send<AddProductToProject>(m =>
+            {
+                m.ProductId = 1;
+                m.ProjectId = 1;
+                m.X = 123;
+                m.Y = 155;
+            });
             return Ok();
         }
 

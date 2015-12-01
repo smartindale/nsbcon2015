@@ -37,7 +37,11 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/signalr/hubs"></script>
     <script type="text/javascript">
-        var connection = $.connection.projectHub;
+        var pricingHub = $.connection.pricingHub;
+
+        pricingHub.client.projectBudgetRecalculated = function (message) {
+            alert("got a pricing update for the budget!");
+        };
 
         $.connection.hub.start().done(function() {
             console.log('started the hub');

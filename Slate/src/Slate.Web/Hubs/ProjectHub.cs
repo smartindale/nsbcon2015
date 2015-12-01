@@ -8,5 +8,6 @@ namespace Slate.Web.Hubs
 {
     public class ProjectHub : Hub
     {
+
     }
 }

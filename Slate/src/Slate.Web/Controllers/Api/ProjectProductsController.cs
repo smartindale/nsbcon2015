@@ -4,8 +4,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Infrastructure;
 using Slate.Projects.Contracts.Commands;
 using Slate.Web.App_Start;
+using Slate.Web.Hubs;
 
 namespace Slate.Web.Controllers.Api
 {

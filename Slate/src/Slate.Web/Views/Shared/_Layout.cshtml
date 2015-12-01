@@ -21,7 +21,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 </ul>
             </div>
         </div>
@@ -36,6 +35,14 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript">
+        var connection = $.connection.projectHub;
+
+        $.connection.hub.start().done(function() {
+            console.log('started the hub');
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

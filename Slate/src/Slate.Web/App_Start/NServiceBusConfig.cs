@@ -1,21 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using NServiceBus;
 
-namespace Slate.Notifications.Endpoint
+namespace Slate.Web.App_Start
 {
-    using NServiceBus;
-
-    /*
-		This class configures this endpoint as a Server. More information about how to configure the NServiceBus host
-		can be found here: http://particular.net/articles/the-nservicebus-host
-	*/
-    public class EndpointConfig : IConfigureThisEndpoint
+    public static class NServiceBusConfig
     {
-        public void Customize(BusConfiguration configuration)
+        public static IBus Bus { get; private set; }
+        public static void Configure()
         {
+            var configuration = new BusConfiguration();
             configuration.Conventions()
                 .DefiningCommandsAs(m => m.Namespace != null && m.Namespace.Contains("Contracts.Commands"))
                 .DefiningEventsAs(m => m.Namespace != null && m.Namespace.Contains("Contracts.Events"))
                 .DefiningMessagesAs(m => m.Namespace != null && m.Namespace.Contains("Contracts.Messages"));
             configuration.UsePersistence<InMemoryPersistence>();
+            NServiceBusConfig.Bus = NServiceBus.Bus.Create(configuration).Start();
         }
     }
 }

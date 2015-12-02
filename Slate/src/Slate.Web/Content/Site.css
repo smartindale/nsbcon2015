@@ -23,7 +23,7 @@ textarea {
 .icon {
      width: 48px;
     height: 48px;
-    margin: 10px !important;
+    margin: 5px !important;
     
 }
 
@@ -118,7 +118,9 @@ textarea {
     background-image: url("/Images/floorplan.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    width: 1728px !important;
+    height: 1152px !important;
 }
 html, body , .fill{
     height: 100%;
@@ -132,8 +134,8 @@ height: 7%;
 
 .toolbar
 {
-min-width: 166px;
-width: 10%;
+    min-width: 90px;
+    width: 10%;
 }
 
 .workarea
@@ -169,13 +171,24 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 
 .icon:hover
 {
-    border: solid 2px lightgray;
     border-radius: 24px;
+    box-shadow: 0px 0px 5px #333;
+}
+
+.icon
+{
+    border-radius: 24px;
+    box-shadow: 0px 0px 3px lightgrey;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover
 {
     background-color: #808080 !important;
+}
+
+.navbar-inverse
+{
+    background-color: #333;
 }
 
 .budget-workarea
@@ -194,4 +207,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 
 body > div > div.container {
     margin-left: 5px;
+}
+
+.navbar-collapse {
+    background-color: #333;
+    border-radius: 0 0 5px 5px;
+}
+
+.worktitle{
+    position: fixed;
+    background: rgba(240,240,240,1);
+    display: block;
+    float: left;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 0px;
+    margin-left: 0px;
 }

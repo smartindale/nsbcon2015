@@ -16,6 +16,7 @@ namespace Slate.Projects.Contracts.Events
 
         decimal Y { get; set; }
 
+        string Id { get; set; }
 
     }
 }

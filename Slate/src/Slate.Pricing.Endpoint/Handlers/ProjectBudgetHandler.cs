@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NServiceBus;
 using NServiceBus.Logging;
 using Slate.Pricing.Contracts.Events;
+using Slate.Pricing.Endpoint.Domain;
 using Slate.Projects.Contracts.Events;
 
 namespace Slate.Pricing.Endpoint.Handlers
@@ -26,13 +27,15 @@ namespace Slate.Pricing.Endpoint.Handlers
                 message.ProjectId,
                 message.ProductId);
 
-            //TODO: recalculate budget
-
+            var repository = new ProjectBudgetRepository();
+            var budget = repository.Get(message.ProjectId);
+            budget.HighCost += new Random().Next(1000) + 1000;
+            budget.LowCost += new Random().Next(1000);
             _bus.Publish<IRecalculatedAProjectBudget>(m =>
             {
                 m.ProjectId = message.ProjectId;
-                m.LowCost = new Random().Next(100000);
-                m.HighCost = new Random().Next(100000) + 100000;
+                m.LowCost = budget.LowCost;
+                m.HighCost = budget.HighCost;
             });
         }
     }

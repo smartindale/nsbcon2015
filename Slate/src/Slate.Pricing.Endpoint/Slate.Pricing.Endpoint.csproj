@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\ProjectBudget.cs" />
+    <Compile Include="Domain\ProjectBudgetRepository.cs" />
     <Compile Include="EndpointConfig.cs" />
     <Compile Include="Handlers\ProjectBudgetHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

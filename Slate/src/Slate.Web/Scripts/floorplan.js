@@ -8,9 +8,9 @@ pricingHub.client.projectBudgetRecalculated = function (message) {
 
 projectHub.client.productAddedToProject = function (message) {
     console.log('product added');
-    $('#floorplan').append("<div id='placed-icon-" + message.ProductId + "' class='placed-icon icon icon-" + message.ProductId + "'></div>");
-    $('#placed-icon-' + message.ProductId).css('top', message.Y + 'px');
-    $('#placed-icon-' + message.ProductId).css('left', message.X + 'px');
+    $('#floorplan').append("<div id='placed-icon-" + message.Id + "' class='placed-icon icon icon-" + message.ProductId + "'></div>");
+    $('#placed-icon-' + message.Id).css('top', message.Y + 'px');
+    $('#placed-icon-' + message.Id).css('left', message.X + 'px');
 }
 
 function addProductToProject(productId,x,y) {

@@ -15,5 +15,6 @@ namespace Slate.Projects.Contracts.Commands
         public decimal X { get; set; }
 
         public decimal Y { get; set; }
+
     }
 }

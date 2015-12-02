@@ -35,6 +35,7 @@ namespace Slate.Projects.Endpoint.Handlers
                 m.ProjectId = message.ProjectId;
                 m.X = message.X;
                 m.Y = message.Y;
+                m.Id = Guid.NewGuid().ToString();
             });
         }
     }
